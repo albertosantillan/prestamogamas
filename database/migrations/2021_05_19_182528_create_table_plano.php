@@ -15,6 +15,17 @@ class CreateTablePlano extends Migration
     {
         Schema::create('table_plano', function (Blueprint $table) {
             $table->id();
+            $table->integer('id_operacion');
+            $table->integer('user_id')->unsigned();
+            $table->string('No_hoja',5);
+            $table->integer('ptosInsp');
+            /** Revisar el tipo de dato para links */
+            $table->string('pdf');
+            $table->string('comparacion',25);
+            $table->boolean('cumple');
+            $table->date('fechaAlta');
+
+
             $table->timestamps();
         });
     }

@@ -19,8 +19,9 @@ class CreateTablePrestamoCopia extends Migration
             $table->integer('id_area')->unsigned();
             $table->integer('id_maquina')->unsigned();
             $table->integer('id_personal')->unsigned();
-            $table->integer('id_plano')->undigned();
-            $table->date('fechaTentDev')->unsigned();
+            $table->integer('id_plano')->unsigned();
+            $table->integer('ot');
+            $table->date('fechaTentDev');
             $table->dateTime('fechaDev');
             $table->boolean('devuelto');
             $table->timestamps();

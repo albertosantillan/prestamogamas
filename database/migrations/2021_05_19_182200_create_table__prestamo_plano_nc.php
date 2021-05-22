@@ -19,9 +19,13 @@ class CreateTablePrestamoPlanoNc extends Migration
             $table->integer('id_area')->unsigned();
             $table->integer('id_maquina')->unsigned();
             $table->integer('id_personal')->unsigned();
-            $table->integer('id_plano')->unsigned();
+            $table->integer('id_pieza')->unsigned();
+            $table->integer('ot');
+            $table->boolean('devuelto');
             $table->date('fechaTentDev');
             $table->dateTime('fechaDev');
+            $table->string('obs',250);
+            
             
             $table->timestamps();
         });

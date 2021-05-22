@@ -23,6 +23,8 @@ class PiezaController extends Controller
 
         return response()->json($data);
     }
+    public function edit()
+    {
 
     public function create(Request $request)
     {

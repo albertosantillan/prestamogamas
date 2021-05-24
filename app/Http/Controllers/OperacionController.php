@@ -19,16 +19,16 @@ class PiezaController extends Controller
 
     public function all()
     {
-        $data = Pieza::all();
+        $data = Operacion::all();
 
         return response()->json($data);
     }
 
     public function create(Request $request)
     {
-        $pieza = Pieza::create($request->input());
+        $operacion = Operacion::create($request->input());
 
-        return response()->json($pieza);
+        return response()->json($operacion);
     }
 
     public function edit()

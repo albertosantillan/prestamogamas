@@ -19,3 +19,4 @@ $router->get('/', function () use ($router) {
 
 $router->get('/piezas', 'PiezaController@all');
 $router->post('/piezas/create', 'PiezaController@create');
+$router->post('/area/create','areaController@create');

@@ -13,7 +13,7 @@ class personal extends Model
      * @var array
      */
     protected $fillable = [
-        'id_operacion','No_hoja','ptosInsp','ptosInsp','pdf','comparacion','cumple','fechaAlta'
+        'id_operacion','No_hoja','ptosInsp','pdf','comparacion','cumple','fechaAlta'
     ];
 
     /**

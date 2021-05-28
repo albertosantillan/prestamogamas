@@ -20,8 +20,8 @@ class CreateTablePieza extends Migration
             $table->string('SKU', 100);
             $table->string('codigo_pieza', 30);
             $table->string('descripcion_pieza', 150);
-            $table->boolean('alta');
-            $table->integer('revision');
+            $table->boolean('alta')->nullable();
+            $table->integer('revision')->nullable();
             $table->timestamps();
         });
     }

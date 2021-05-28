@@ -31,13 +31,23 @@ class PiezaController extends Controller
         return response()->json($pieza);
     }
 
-    public function edit()
+    public function update(Request $request, $id)
     {
-        # code...
+        $pieza = Pieza::findOrFail($id);
+        $pieza->update($request->input());
+        return response()->json([
+            'message' => 'pieza modificada ',
+            'pieza' => $pieza
+        ]);
     }
 
-    public function delete()
+    public function delete(Request $request, $id)
     {
-        # code...
+        $pieza = Pieza::findOrFail($id);
+        $pieza->delete();
+        return response()->json([
+            'message' => 'pieza eliminada ',
+            'pieza' => $pieza
+        ]);
     }
 }

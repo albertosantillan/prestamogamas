@@ -13,7 +13,7 @@ class CreateTableOperacion extends Migration
      */
     public function up()
     {
-        Schema::create('table_operacion', function (Blueprint $table) {
+        Schema::create('operacion', function (Blueprint $table) {
             $table->id();
             $table->integer('id_pieza')->unsigned();
             $table->integer('No_operacion');

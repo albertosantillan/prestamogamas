@@ -13,7 +13,7 @@ class CreateTableMaquina extends Migration
      */
     public function up()
     {
-        Schema::create('table_maquina', function (Blueprint $table) {
+        Schema::create('maquina', function (Blueprint $table) {
             $table->id();
             $table->string('maquina',20);
             $table->timestamps();

@@ -13,7 +13,7 @@ class CreateTablePrestamoPlanoNc extends Migration
      */
     public function up()
     {
-        Schema::create('table__prestamo_plano_nc', function (Blueprint $table) {
+        Schema::create('prestamo_plano_nc', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id')->unsigned();
             $table->integer('id_area')->unsigned();

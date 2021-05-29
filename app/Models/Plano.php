@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class maquina extends Model
+class Plano extends Model
 {  
 
     /**
@@ -13,7 +13,7 @@ class maquina extends Model
      * @var array
      */
     protected $fillable = [
-        'maquina'
+        'id_operacion','No_hoja','ptosInsp','comparacion','cumple','fechaAlta'
     ];
 
     /**

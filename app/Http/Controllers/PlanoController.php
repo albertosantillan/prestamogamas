@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Pieza;
+use App\Models\Plano;
 use Illuminate\Http\Request;
 
-class PiezaController extends Controller
+class PlanoController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -19,36 +19,35 @@ class PiezaController extends Controller
 
     public function all()
     {
-        $data = Pieza::all();
+        $data = Plano::all();
 
         return response()->json($data);
     }
 
     public function create(Request $request)
     {
-        $pieza = Pieza::create($request->input());
+        $plano = Plano::create($request->input());
 
-        return response()->json($pieza);
+        return response()->json($plano);
     }
 
     public function update(Request $request, $id)
     {
-        $pieza = Pieza::findOrFail($id);use App\Models\Operacion;
-        use Illuminate\Http\Request;
-        $pieza->update($request->input());
+        $plano = Plano::findOrFail($id);
+        $plano->update($request->input());
         return response()->json([
-            'message' => 'pieza modificada ',
-            'pieza' => $pieza
+            'message' => 'plano modificado ',
+            'plano' => $plano
         ]);
     }
 
     public function delete(Request $request, $id)
     {
-        $pieza = Pieza::findOrFail($id);
-        $pieza->delete();
+        $plano = Plano::findOrFail($id);
+        $plano->delete();
         return response()->json([
-            'message' => 'pieza eliminada ',
-            'pieza' => $pieza
+            'message' => 'plano eliminado ',
+            'plano' => $pieza
         ]);
     }
 }

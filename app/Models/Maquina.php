@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class operacion extends Model
+class Maquina extends Model
 {  
 
     /**
@@ -13,7 +13,7 @@ class operacion extends Model
      * @var array
      */
     protected $fillable = [
-        'id_pieza','No_operacion', 'descripcion_op','codigo','revision','actualizado','solid','legible','agrupado','codBarras','dobleCarta'
+        'maquina'
     ];
 
     /**

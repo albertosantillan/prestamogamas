@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Operacion;
+use App\Models\PrestamoCopia;
 use Illuminate\Http\Request;
 
-class OperacionController extends Controller
+class PrestamoCopiaController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -17,27 +17,21 @@ class OperacionController extends Controller
         //
     }
 
+    //
     public function all()
     {
-        $data = Operacion::all();
+        $data = PrestamoCopia::all();
 
         return response()->json($data);
+
     }
 
     public function create(Request $request)
     {
-        $operacion = Operacion::create($request->input());
+        $PrestamoCopia = PrestamoCopia::create($request->inpunt());
 
-        return response()->json($operacion);
+        return response()->json($PrestamoCopia);
     }
 
-    public function edit()
-    {
-        # code...
-    }
-
-    public function delete()
-    {
-        # code...
-    }
+    
 }

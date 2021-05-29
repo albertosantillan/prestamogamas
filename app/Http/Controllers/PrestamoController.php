@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
-class ExampleController extends Controller
+use App\Models\Prestamo;
+use Illuminate\Http\Request;
+
+class PrestamoController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -17,7 +20,7 @@ class ExampleController extends Controller
     //
     public function all()
     {
-        $data = maquina::all();
+        $data = Prestamo::all();
 
         return response()->json($data);
 
@@ -25,10 +28,10 @@ class ExampleController extends Controller
 
     public function create(Request $request)
     {
-        $operacion = Operacion::create($request->inpunt());
+        $Prestamo = Prestamo::create($request->inpunt());
 
-        return response()->json($operacion);
-
+        return response()->json($Prestamo);
     }
+
     
 }

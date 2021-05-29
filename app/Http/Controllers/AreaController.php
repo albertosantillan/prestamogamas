@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
-class areaController extends Controller
+use App\Models\Area;
+use Illuminate\Http\Request;
+
+class AreaController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -16,7 +19,7 @@ class areaController extends Controller
 
     public function all()
     {
-        $data = area::all();
+        $data = Area::all();
 
         return response()->json($data);
     }
@@ -24,7 +27,7 @@ class areaController extends Controller
     public function create()
     {
 
-        $data = area::create($request->input());
+        $area = Area::create($request->input());
 
         return response()->json($area);
         

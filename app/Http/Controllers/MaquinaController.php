@@ -28,7 +28,7 @@ class MaquinaController extends Controller
 
     public function create(Request $request)
     {
-        $maquina = Maquina::create($request->inpunt());
+        $maquina = Maquina::create($request->input());
 
         return response()->json($maquina);
 

@@ -24,9 +24,8 @@ class AreaController extends Controller
         return response()->json($data);
     }
 
-    public function create()
+    public function create(Request $request)
     {
-
         $area = Area::create($request->input());
 
         return response()->json($area);

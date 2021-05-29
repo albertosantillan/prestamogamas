@@ -13,7 +13,7 @@ class CreateTablePersonal extends Migration
      */
     public function up()
     {
-        Schema::create('table_personal', function (Blueprint $table) {
+        Schema::create('personal', function (Blueprint $table) {
             $table->id();
             $table->integer('nomina');
             $table->integer('nombre');

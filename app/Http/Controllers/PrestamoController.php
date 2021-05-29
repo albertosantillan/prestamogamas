@@ -33,5 +33,14 @@ class PrestamoController extends Controller
         return response()->json($Prestamo);
     }
 
-    
+    public function update(Request $request, $id);
+    {
+        $prestamo = Prestamo::FindOrFail($id);
+        $prestamo->update($request->input());
+        return response()->json([
+            'message'=>'prestamo actualizado',
+            'prestamo'=> $prestamo
+        ]);
+    }
+
 }

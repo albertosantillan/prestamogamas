@@ -33,5 +33,13 @@ class PrestamoPlanoNcController extends Controller
         return response()->json($prestamoNc);
     }
 
-    
+    public function update(Request $request, $id)
+    {
+        $prestamoNc = PrestamoPlanoNc::FindOrFail($id);
+        $prestamoNc->update($request->input);
+        return response()->json([
+            'message'=> 'Prestamo actualizado',
+            'prestmoNc'=>$prestamoNc
+        ]);
+    }
 }

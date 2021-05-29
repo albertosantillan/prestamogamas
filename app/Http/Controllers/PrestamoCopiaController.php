@@ -33,5 +33,15 @@ class PrestamoCopiaController extends Controller
         return response()->json($PrestamoCopia);
     }
 
+    public function update(Request $request, $id)
+    {
+        $prestamoCopia = Prestamo::FindOrFail($id);
+        $prestamoCopia->update($request->input());
+        return response()->json([
+            'message'=>'Prestamo actualizado',
+            'prestamo'=>$prestamoCopia    
+        ]);
+    }
+
     
 }

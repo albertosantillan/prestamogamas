@@ -31,13 +31,25 @@ class OperacionController extends Controller
         return response()->json($operacion);
     }
 
-    public function edit()
+    public function update(Request $request,$id)
     {
-        # code...
+        $operacion = Operacion::FindOrFail($id);
+        $operacion->update($request->input());
+        retunr response()->json([
+            'message'=> 'Operacion actualizada',
+            'operacion' => $operacion
+        ]);
+
     }
 
     public function delete()
     {
-        # code...
+        $operacion = Operacion::FindOrFail($id);
+        $operacion->delete();
+        return response()->json([
+            'message'=> 'Operacion eliminada',
+            'operacion'=> $operacion
+        ]);
+
     }
 }

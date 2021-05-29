@@ -33,8 +33,7 @@ class PiezaController extends Controller
 
     public function update(Request $request, $id)
     {
-        $pieza = Pieza::findOrFail($id);use App\Models\Operacion;
-        use Illuminate\Http\Request;
+        $pieza = Pieza::findOrFail($id);
         $pieza->update($request->input());
         return response()->json([
             'message' => 'pieza modificada ',

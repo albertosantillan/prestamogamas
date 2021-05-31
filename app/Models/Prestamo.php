@@ -13,7 +13,7 @@ class Prestamo extends Model
      * @var array
      */
     protected $fillable = [
-        'id_area','id_maquina','id_personal','id_operacion','ot','fechaTentDev','fechaDev','devuelto','devolucionOk'
+        'id_area','id_maquina','id_personal','id_operacion','ot','fechaTentDev','fechaDev','devuelto','devolucionOk','user_id'
     ];
 
     /**
@@ -24,4 +24,14 @@ class Prestamo extends Model
     protected $hidden = [
         '',
     ];
+
+    public function area()
+    {
+        return $this->hasOne(Area::Class,'id','id_area');
+    }
+
+    public function maquina()
+    {
+        return $this->hasOne(Maquina::Class,'id','id_maquina');
+    }
 }

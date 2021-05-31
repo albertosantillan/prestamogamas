@@ -13,10 +13,10 @@ class CreateTablePersonal extends Migration
      */
     public function up()
     {
-        Schema::create('personal', function (Blueprint $table) {
+        Schema::create('empleados', function (Blueprint $table) {
             $table->id();
             $table->integer('nomina');
-            $table->integer('nombre');
+            $table->string('nombre');
             $table->timestamps();
         });
     }

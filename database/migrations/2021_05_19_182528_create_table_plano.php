@@ -13,7 +13,7 @@ class CreateTablePlano extends Migration
      */
     public function up()
     {
-        Schema::create('plano', function (Blueprint $table) {
+        Schema::create('planos', function (Blueprint $table) {
             $table->id();
             $table->integer('id_operacion')->unsigned();
             $table->integer('user_id')->unsigned();

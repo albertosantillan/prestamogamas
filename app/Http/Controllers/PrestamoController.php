@@ -20,7 +20,7 @@ class PrestamoController extends Controller
     //
     public function all()
     {
-        $data = Prestamo::all();
+        $data = Prestamo::with(['area','maquina'])->get();
 
         return response()->json($data);
 
@@ -28,12 +28,12 @@ class PrestamoController extends Controller
 
     public function create(Request $request)
     {
-        $Prestamo = Prestamo::create($request->inpunt());
+        $Prestamo = Prestamo::create($request->input());
 
         return response()->json($Prestamo);
     }
 
-    public function update(Request $request, $id);
+    public function update(Request $request, $id)
     {
         $prestamo = Prestamo::FindOrFail($id);
         $prestamo->update($request->input());

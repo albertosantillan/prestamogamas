@@ -13,7 +13,7 @@ class CreateTablePrestamo extends Migration
      */
     public function up()
     {
-        Schema::create('prestamo', function (Blueprint $table) {
+        Schema::create('prestamos', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id')->unsigned();
             $table->integer('id_area')->unsigned();

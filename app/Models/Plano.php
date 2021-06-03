@@ -13,7 +13,12 @@ class Plano extends Model
      * @var array
      */
     protected $fillable = [
-        'id_operacion','No_hoja','ptosInsp','comparacion','cumple','fechaAlta'
+        'id_operacion',
+        'No_hoja',
+        'ptosInsp',
+        'comparacion',
+        'cumple',
+        'fechaAlta'
     ];
 
     /**

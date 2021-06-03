@@ -13,7 +13,15 @@ class PrestamoPlanoNC extends Model
      * @var array
      */
     protected $fillable = [
-        'id_area','id_maquina','id_personal','id_pieza','ot','fechaTentDev','fechaDev','devuelto','obs'
+        'id_area',
+        'id_maquina',
+        'id_personal',
+        'id_pieza',
+        'ot',
+        'fechaTentDev',
+        'fechaDev',
+        'devuelto',
+        'obs'
     ];
 
     /**

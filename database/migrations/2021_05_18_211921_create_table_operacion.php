@@ -19,13 +19,13 @@ class CreateTableOperacion extends Migration
             $table->integer('No_operacion');
             $table->string('descripcion_op', 200);
             $table->string('codigo',50);
-            $table->integer('revision');
+            $table->integer('revision')->nullable();
             $table->boolean('actualizado');
             $table->boolean('solid');
             $table->boolean('legible');
             $table->boolean('agrupado');
-            $table->boolean('codBarras');
-            $table->boolean('dobleCarta');
+            $table->boolean('codBarras')->nullable();
+            $table->boolean('dobleCarta')->nullabe();
             $table->timestamps();
         });
     }
@@ -37,6 +37,6 @@ class CreateTableOperacion extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_operacion');
+        Schema::dropIfExists('operaciones');
     }
 }

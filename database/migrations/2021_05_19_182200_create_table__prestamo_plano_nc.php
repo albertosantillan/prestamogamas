@@ -21,9 +21,9 @@ class CreateTablePrestamoPlanoNc extends Migration
             $table->integer('id_personal')->unsigned();
             $table->integer('id_pieza')->unsigned();
             $table->integer('ot');
-            $table->boolean('devuelto');
-            $table->date('fechaTentDev');
-            $table->dateTime('fechaDev');
+            $table->boolean('devuelto')->nullable();
+            $table->date('fechaTentDev')->nullable();
+            $table->dateTime('fechaDev')->nullable();
             $table->string('obs',250);
             
             
@@ -38,6 +38,6 @@ class CreateTablePrestamoPlanoNc extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table__prestamo_plano_nc');
+        Schema::dropIfExists('prestamos_plano_nc');
     }
 }

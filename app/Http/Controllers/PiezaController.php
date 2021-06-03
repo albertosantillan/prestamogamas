@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pieza;
+use App\Models\PiezaHistory;
 use Illuminate\Http\Request;
 
 class PiezaController extends Controller
@@ -26,8 +27,32 @@ class PiezaController extends Controller
 
     public function create(Request $request)
     {
-        $pieza = Pieza::create($request->input());
+        // Validar todos los campos enviados en el formulario
+        $this->validate($request, [
+            'SKU' => 'required|min:5|max:100',
+            'codigo_pieza' => 'required',
+            'alta' => 'required|boolean'
+        ], [
+            'SKU.required' => 'SKU es requerido',
+            'SKU.min' => 'SKU no debe ser menor de 5 caracteres',
+            'alta.boolean' => 'Campo Alta debe ser verdadero o falso',
+        ]);
 
+        // Convertir request en array/arreglo
+        $input = $request->input();
+
+        // Cambiar el valor de codigo_pieza a mayusculas
+        $input['codigo_pieza'] = strtoupper($input['codigo_pieza']);
+
+        // Guardar en DB
+        $pieza = Pieza::create($input);
+
+        PiezaHistory::create([
+            'id_pieza' => $pieza->id,
+            'user_id' => 'lalo'
+        ]);
+
+        // Mostar en pantalla respuesta JSON
         return response()->json($pieza);
     }
 

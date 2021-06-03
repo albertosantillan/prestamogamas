@@ -22,9 +22,9 @@ class CreateTablePrestamo extends Migration
             $table->integer('id_operacion')->unsigned();
             $table->integer('ot');
             $table->date('fechaTentDev');
-            $table->dateTime('fechaDev');
-            $table->boolean('devuelto');
-            $table->boolean('devolucionOk');
+            $table->dateTime('fechaDev')->nullable();
+            $table->boolean('devuelto')->nullable();
+            $table->boolean('devolucionOk')->nullable();
             $table->timestamps();
         });
     }
@@ -36,6 +36,6 @@ class CreateTablePrestamo extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_prestamo');
+        Schema::dropIfExists('prestamos');
     }
 }

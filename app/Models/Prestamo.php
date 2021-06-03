@@ -13,7 +13,16 @@ class Prestamo extends Model
      * @var array
      */
     protected $fillable = [
-        'id_area','id_maquina','id_personal','id_operacion','ot','fechaTentDev','fechaDev','devuelto','devolucionOk','user_id'
+        'id_area',
+        'id_maquina',
+        'id_personal',
+        'id_operacion',
+        'ot',
+        'fechaTentDev',
+        'fechaDev',
+        'devuelto',
+        'devolucionOk',
+        'user_id'
     ];
 
     /**

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTablePlano extends Migration
+class CreateTablePiezaHistory extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,10 @@ class CreateTablePlano extends Migration
      */
     public function up()
     {
-        Schema::create('planos', function (Blueprint $table) {
+        Schema::create('pieza_history', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_operacion')->unsigned();
+            $table->integer('id_pieza')->unsigned();
             $table->integer('user_id')->unsigned();
-            $table->string('No_hoja',5)->nullable();
-            $table->integer('ptosInsp')->nullable();
-            $table->date('fechaAlta');
-
-
             $table->timestamps();
         });
     }
@@ -33,6 +28,6 @@ class CreateTablePlano extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('planos');
+        Schema::dropIfExists('pieza_history');
     }
 }

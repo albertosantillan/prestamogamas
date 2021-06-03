@@ -13,7 +13,17 @@ class Operacion extends Model
      * @var array
      */
     protected $fillable = [
-        'id_pieza','No_operacion', 'descripcion_op','codigo','revision','actualizado','solid','legible','agrupado','codBarras','dobleCarta'
+        'id_pieza',
+        'No_operacion', 
+        'descripcion_op',
+        'codigo',
+        'revision',
+        'actualizado',
+        'solid',
+        'legible',
+        'agrupado',
+        'codBarras',
+        'dobleCarta'
     ];
 
     /**

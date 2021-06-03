@@ -22,8 +22,8 @@ class CreateTablePrestamoCopia extends Migration
             $table->integer('id_plano')->unsigned();
             $table->integer('ot');
             $table->date('fechaTentDev');
-            $table->dateTime('fechaDev');
-            $table->boolean('devuelto');
+            $table->dateTime('fechaDev')->nullable();
+            $table->boolean('devuelto')->nullable();
             $table->timestamps();
         });
     }
@@ -35,6 +35,6 @@ class CreateTablePrestamoCopia extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_prestamo_copia');
+        Schema::dropIfExists('prestamos_copia');
     }
 }

@@ -27,6 +27,6 @@ class CreateTableMaquina extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_maquina');
+        Schema::dropIfExists('maquinas');
     }
 }

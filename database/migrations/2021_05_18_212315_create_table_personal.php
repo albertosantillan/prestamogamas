@@ -28,6 +28,6 @@ class CreateTablePersonal extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_personal');
+        Schema::dropIfExists('empleados');
     }
 }

@@ -12,7 +12,13 @@ class Pieza extends Model
      * @var array
      */
     protected $fillable = [
-        'id_perforadora', 'user_id', 'SKU', 'codigo_pieza', 'descripcion_pieza', 'alta', 'revision'
+        'id_perforadora', 
+        'user_id', 
+        'SKU', 
+        'codigo_pieza', 
+        'descripcion_pieza', 
+        'alta', 
+        'revision'
     ];
 
     /**

@@ -18,7 +18,7 @@ class CreateTablePrestamo extends Migration
             $table->integer('user_id')->unsigned();
             $table->integer('id_area')->unsigned();
             $table->integer('id_maquina')->unsigned();
-            $table->integer('id_personal')->unsigned();
+            $table->integer('id_empleado')->unsigned();
             $table->integer('id_operacion')->unsigned();
             $table->integer('ot');
             $table->date('fechaTentDev');

@@ -17,20 +17,12 @@ $router->get('/', function () use ($router) {
     echo "prestamos";
 });
 
+$router->post('/maquinas/create','MaquinaController@create');
+$router->post('/empleados/create','PersonalController@create');
 include 'piezas.php';
 include 'area.php';
 include 'prestamos.php';
-
-$router->put('/operaciones/update/{id}','OperacionController@update');
-
-$router->put('/prestamosCopia/update/{id}','PrestamoCopiaController@update');
-$router->put('/prestamosNc/update/{id}','PrestamoPlanosNc@Controller@update');
-
-$router->delete('/operaciones/delete/{id}','OperacionController@delete');
-$router->post('/maquinas/create','MaquinaController@create');
-$router->post('/operaciones/create','OperacionController@create');
-$router->post('/personal/create','PersonalController@create');
-
-$router->post('/prestamoscopia/create','PrestamoCopiaController@create');
-$router->post('/prestamosNc/create','PrestamoPlanoNcController@create');
-
+include 'operaciones.php';
+include 'prestamosCopia.php';
+include 'prestamosNc.php';
+include 'planos.php';

@@ -34,4 +34,10 @@ class Operacion extends Model
     protected $hidden = [
         '',
     ];
+
+    public function pieza()
+    {
+        return $this->hasOne(Pieza::Class,'id','id_pieza');
+    }
+    
 }

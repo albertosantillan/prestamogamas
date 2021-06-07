@@ -15,7 +15,7 @@ class Prestamo extends Model
     protected $fillable = [
         'id_area',
         'id_maquina',
-        'id_personal',
+        'id_empleado',
         'id_operacion',
         'ot',
         'fechaTentDev',
@@ -43,4 +43,17 @@ class Prestamo extends Model
     {
         return $this->hasOne(Maquina::Class,'id','id_maquina');
     }
+    public function empleado()
+    {
+        return $this->hasOne(Empleado::Class,'id','id_empleado');
+    }
+    public function operacion()
+    {
+        return $this->hasOne(Operacion::Class,'id','id_operacion');
+    }
+    public function user()
+    {
+        return $this->hasOne(User::Class,'id','user_id');
+    }
+
 }

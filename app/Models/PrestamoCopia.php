@@ -15,7 +15,7 @@ class PrestamoCopia extends Model
     protected $fillable = [
         'id_area',
         'id_maquina',
-        'id_personal',
+        'id_empleado',
         'id_plano',
         'ot',
         'fechaTentDev',
@@ -31,4 +31,20 @@ class PrestamoCopia extends Model
     protected $hidden = [
         '',
     ];
+    public function area()
+    {
+        return $this->hasOne(Area::Class,'id','id_area');
+    }
+    public function maquina()
+    {
+        return $this->hasOne(Maquina::Class,'id','id_maquina');
+    }
+    public function empleado()
+    {
+        return $this->hasOne(Empleado::Class,'id','id_empleado');
+    }
+    public function plano()
+    {
+        return $this->hasOne(Plano::Class,'id','id_plano');
+    }
 }

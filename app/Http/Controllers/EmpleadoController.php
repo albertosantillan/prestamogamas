@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Personal;
+use App\Models\Empleado;
 use Illuminate\Http\Request;
 
-class PersonalController extends Controller
+class EmpleadoController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -28,6 +28,14 @@ class PersonalController extends Controller
 
     public function create(Request $request)
     {
+        $this->validate($request, [
+            'nomina'=>'required|integer',
+            'nombre'=>'required'
+        ],[
+            'nomina.integer'=> 'El campo nómina debe ser un número válido',
+            'nombre.required'=>'El campo nombre es requerido'
+        ]);
+
         $personal = Personal::create($request->inpunt());
 
         return response()->json($personal);

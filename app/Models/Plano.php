@@ -29,4 +29,8 @@ class Plano extends Model
     protected $hidden = [
         '',
     ];
+    public function operacion()
+    {
+        return $this->hasOne(Operacion::Class,'id','id_operacion');
+    }
 }

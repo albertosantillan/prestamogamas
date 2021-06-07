@@ -26,7 +26,14 @@ class AreaController extends Controller
 
     public function create(Request $request)
     {
-        $area = Area::create($request->input());
+        $this->validate($request, [
+            'nombre'=>'required'
+        ], [
+            'nombre.required'=>'El nombre del área es requerido'
+        ]);
+        $input['nombre'] = strtoupper($input['nombre']);
+
+        $area = Area::create($input);
 
         return response()->json($area);
         

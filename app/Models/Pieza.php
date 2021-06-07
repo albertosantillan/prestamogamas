@@ -29,4 +29,8 @@ class Pieza extends Model
     protected $hidden = [
         '',
     ];
+    public function user()
+    {
+       return $this->hasOne(user::Class,'id','user_id'); 
+    }
 }

@@ -28,6 +28,11 @@ class PrestamoCopiaController extends Controller
 
     public function create(Request $request)
     {
+        $this->validate([
+            'fechaTentDev'=>'required'
+        ],[
+            'fechaTentDev.required'=>'La fecha tentativa de devolución es requerida'
+        ]);
         $PrestamoCopia = PrestamoCopia::create($request->inpunt());
 
         return response()->json($PrestamoCopia);

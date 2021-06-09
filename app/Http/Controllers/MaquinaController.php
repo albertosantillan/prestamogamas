@@ -28,7 +28,16 @@ class MaquinaController extends Controller
 
     public function create(Request $request)
     {
-        $maquina = Maquina::create($request->input());
+        $this->validate($request, [
+            'nombre'=>'required'
+        ], [
+            'nombre.required'=>'El nombre de la máquina es requerido'
+        ]);
+        $input = $request->input();
+        
+        $input['nombre'] = strtoupper($input['nombre']);
+
+        $maquina = Maquina::create($input);
 
         return response()->json($maquina);
 

@@ -31,11 +31,13 @@ class PiezaController extends Controller
         $this->validate($request, [
             'SKU' => 'required|min:5|max:100',
             'codigo_pieza' => 'required',
-            'alta' => 'required|boolean'
+            'descripcion_pieza'=>'required'
+
         ], [
             'SKU.required' => 'SKU es requerido',
             'SKU.min' => 'SKU no debe ser menor de 5 caracteres',
-            'alta.boolean' => 'Campo Alta debe ser verdadero o falso',
+            'descripcion_pieza.required'=>'La descripción de la pieza es requerida'
+
         ]);
 
         // Convertir request en array/arreglo
@@ -43,15 +45,15 @@ class PiezaController extends Controller
 
         // Cambiar el valor de codigo_pieza a mayusculas
         $input['codigo_pieza'] = strtoupper($input['codigo_pieza']);
-
+        
         // Guardar en DB
         $pieza = Pieza::create($input);
 
-        PiezaHistory::create([
+        /**PiezaHistory::create([
             'id_pieza' => $pieza->id,
             'user_id' => 'lalo'
         ]);
-
+        **/
         // Mostar en pantalla respuesta JSON
         return response()->json($pieza);
     }

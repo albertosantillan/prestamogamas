@@ -13,7 +13,7 @@ class CreateTablePiezaHistory extends Migration
      */
     public function up()
     {
-        Schema::create('pieza_history', function (Blueprint $table) {
+        Schema::create('pieza_histories', function (Blueprint $table) {
             $table->id();
             $table->integer('id_pieza')->unsigned();
             $table->integer('user_id')->unsigned();

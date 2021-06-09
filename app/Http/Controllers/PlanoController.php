@@ -26,7 +26,9 @@ class PlanoController extends Controller
 
     public function create(Request $request)
     {
-        $plano = Plano::create($request->input());
+        $input['No_hoja']= strtoupper($input['No_hoja']);
+
+        $plano = Plano::create($input);
 
         return response()->json($plano);
     }

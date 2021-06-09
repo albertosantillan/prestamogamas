@@ -28,6 +28,11 @@ class PrestamoPlanoNcController extends Controller
 
     public function create(Request $request)
     {
+        $this->validate([
+            'fechaTentDev'=>'required'
+        ],[
+            'fechaTentDev.required'=>'La fecha tentativa de devolución es requerida'
+        ]);
         $prestamoNc = PrestamoPlanoNc::create($request->inpunt());
 
         return response()->json($prestamoNc);

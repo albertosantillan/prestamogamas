@@ -28,6 +28,11 @@ class PrestamoController extends Controller
 
     public function create(Request $request)
     {
+        $this->validate([
+            'fechaTentDev'=>'required'
+        ],[
+            'fechaTentDev.required'=>'La fecha tentativa de devolución es requerida'
+        ]);
         $Prestamo = Prestamo::create($request->input());
 
         return response()->json($Prestamo);

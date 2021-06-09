@@ -11,14 +11,12 @@ class Pieza extends Model
      *
      * @var array
      */
-    protected $fillable = [
-        'id_perforadora', 
+    protected $fillable = [ 
         'user_id', 
         'SKU', 
         'codigo_pieza', 
         'descripcion_pieza', 
         'alta', 
-        'revision'
     ];
 
     /**

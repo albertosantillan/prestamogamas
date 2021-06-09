@@ -26,23 +26,32 @@ class OperacionController extends Controller
 
     public function create(Request $request)
     {
-        $operacion = Operacion::create($request->input());
+        $this->validate($request, [
+            'descripcion_op'=>'required'
+        ],[
+            'descripcion_op.required'=>'Ls descripción de la operación es requerida'
+        ]);
+        $input = $request->input();
+
+        $input['descripcion_op'] = strtoupper($input['descripcion_op']);
+        
+        $operacion = Operacion::create($input);
 
         return response()->json($operacion);
     }
 
-    public function update(Request $request,$id)
+    public function update(Request $request, $id)
     {
         $operacion = Operacion::FindOrFail($id);
         $operacion->update($request->input());
-        retunr response()->json([
+        return response()->json([
             'message'=> 'Operacion actualizada',
             'operacion' => $operacion
         ]);
 
     }
 
-    public function delete()
+    public function delete(Request $request, $id)
     {
         $operacion = Operacion::FindOrFail($id);
         $operacion->delete();

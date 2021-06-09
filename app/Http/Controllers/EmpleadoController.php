@@ -20,7 +20,7 @@ class EmpleadoController extends Controller
     //
     public function all()
     {
-        $data = Personal::all();
+        $data = Empleado::all();
 
         return response()->json($data);
 
@@ -36,7 +36,7 @@ class EmpleadoController extends Controller
             'nombre.required'=>'El campo nombre es requerido'
         ]);
 
-        $personal = Personal::create($request->inpunt());
+        $personal = Empleado::create($request->inpunt());
 
         return response()->json($personal);
     }

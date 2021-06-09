@@ -15,7 +15,6 @@ class CreateTablePieza extends Migration
     {
         Schema::create('piezas', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_perforadora')->unsigned();
             $table->integer('user_id')->unsigned();
             $table->string('SKU', 100);
             $table->string('codigo_pieza', 30);

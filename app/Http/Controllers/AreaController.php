@@ -31,6 +31,8 @@ class AreaController extends Controller
         ], [
             'nombre.required'=>'El nombre del área es requerido'
         ]);
+        $input = $request->input();
+        
         $input['nombre'] = strtoupper($input['nombre']);
 
         $area = Area::create($input);

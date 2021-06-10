@@ -56,4 +56,20 @@ class Prestamo extends Model
         return $this->hasOne(User::Class,'id','user_id');
     }
 
+    // Scopes
+
+    public function scopeDevueltos($query, $request)
+    {
+
+        if($request->has('isDevueltos')) {
+            return $query->where('devuelto');
+        }
+
+        return $request;
+    }
+
+    public function scopeFilter($query, $request)
+    {
+        return $query;
+    }
 }

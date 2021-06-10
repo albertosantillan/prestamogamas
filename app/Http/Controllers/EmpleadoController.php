@@ -36,7 +36,7 @@ class EmpleadoController extends Controller
             'nombre.required'=>'El campo nombre es requerido'
         ]);
 
-        $personal = Empleado::create($request->inpunt());
+        $personal = Empleado::create($request->input());
 
         return response()->json($personal);
     }

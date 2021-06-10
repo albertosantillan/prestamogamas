@@ -18,9 +18,12 @@ class PiezaController extends Controller
         //
     }
 
-    public function all()
+    public function all(Request $request)
     {
-        $data = Pieza::all();
+
+        $per_page = $request->input('per_page', 5);
+
+        $data = Pieza::filter($request)->paginate($per_page);
 
         return response()->json($data);
     }
@@ -45,6 +48,7 @@ class PiezaController extends Controller
 
         // Cambiar el valor de codigo_pieza a mayusculas
         $input['codigo_pieza'] = strtoupper($input['codigo_pieza']);
+        $input['descripcion_pieza'] = strtoupper($input['descripcion_pieza']);
         
         // Guardar en DB
         $pieza = Pieza::create($input);

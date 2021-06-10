@@ -18,7 +18,7 @@ $router->get('/', function () use ($router) {
 });
 
 $router->post('/maquinas/create','MaquinaController@create');
-$router->post('/empleados/create','PersonalController@create');
+$router->post('/empleados/create','EmpleadoController@create');
 include 'piezas.php';
 include 'area.php';
 include 'prestamos.php';

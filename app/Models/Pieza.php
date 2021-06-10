@@ -27,8 +27,33 @@ class Pieza extends Model
     protected $hidden = [
         '',
     ];
+
+    // Relationships
+
     public function user()
     {
        return $this->hasOne(user::Class,'id','user_id'); 
+    }
+
+    // Scopes
+
+    public function scopeFilter($query, $request)
+    {
+        if($request->has('cp')) {
+            $query->where('codigo_pieza', 'like', '%'.$request->input('cp').'%');
+        }
+
+        if($request->has('descripcion')) {
+            $query->where('descripcion_pieza', 'like', '%'.$request->input('descripcion').'%');
+        }
+
+        if($request->has('fecha_inic')){
+            $query->whereDate('created_at', '>=', $request->input('fecha_inic'));
+        }
+        if($request->has('fecha_fin')){
+            $query->whereDate('created_at', '<=', $request->input('fecha_fin'));
+        }
+
+        return $query;
     }
 }

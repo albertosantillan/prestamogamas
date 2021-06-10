@@ -20,7 +20,7 @@ class PrestamoController extends Controller
     //
     public function all()
     {
-        $data = Prestamo::with(['area','maquina'])->get();
+        $data = Prestamo::devueltos($request)->filter($request)->with(['area','maquina'])->get();
 
         return response()->json($data);
 

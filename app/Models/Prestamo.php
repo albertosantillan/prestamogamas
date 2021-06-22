@@ -67,9 +67,4 @@ class Prestamo extends Model
 
         return $request;
     }
-
-    public function scopeFilter($query, $request)
-    {
-        return $query;
-    }
 }

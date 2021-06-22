@@ -18,9 +18,11 @@ class PrestamoController extends Controller
     }
 
     //
-    public function all()
+    public function all(Request $request)
     {
-        $data = Prestamo::devueltos($request)->filter($request)->with(['area','maquina'])->get();
+        $per_page = $request->input('per_page', 2);
+
+        $data = Prestamo::Devueltos($request)->paginate($per_page)->with(['area','maquina']);
 
         return response()->json($data);
 
@@ -28,11 +30,13 @@ class PrestamoController extends Controller
 
     public function create(Request $request)
     {
-        $this->validate([
+        $this->validate($request, [
             'fechaTentDev'=>'required'
         ],[
             'fechaTentDev.required'=>'La fecha tentativa de devolución es requerida'
         ]);
+        $input = $request->input();
+        
         $Prestamo = Prestamo::create($request->input());
 
         return response()->json($Prestamo);

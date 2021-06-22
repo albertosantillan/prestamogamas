@@ -20,7 +20,6 @@ class PiezaController extends Controller
 
     public function all(Request $request)
     {
-
         $per_page = $request->input('per_page', 5);
 
         $data = Pieza::filter($request)->paginate($per_page);

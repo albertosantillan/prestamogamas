@@ -22,7 +22,8 @@ class PrestamoController extends Controller
     {
         $per_page = $request->input('per_page', 2);
 
-        $data = Prestamo::Devueltos($request)->paginate($per_page)->with(['area','maquina']);
+        $data = Prestamo::Devueltos($request)->paginate($per_page);
+        
 
         return response()->json($data);
 

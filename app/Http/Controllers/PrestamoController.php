@@ -20,13 +20,11 @@ class PrestamoController extends Controller
     //
     public function all(Request $request)
     {
-        $per_page = $request->input('per_page', 2);
+        $per_page = $request->input('per_page', 5);
 
-        $data = Prestamo::Devueltos($request)->paginate($per_page);
+        $data = Prestamo::devueltos($request)->paginate($per_page);
         
-
         return response()->json($data);
-
     }
 
     public function create(Request $request)

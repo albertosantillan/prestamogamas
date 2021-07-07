@@ -60,11 +60,9 @@ class Prestamo extends Model
 
     public function scopeDevueltos($query, $request)
     {
-
         if($request->has('isDevueltos')) {
             return $query->where('devuelto');
         }
-
-        return $request;
+        return $query;
     }
 }

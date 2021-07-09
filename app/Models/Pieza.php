@@ -37,7 +37,7 @@ class Pieza extends Model
 
     // Scopes
 
-    public function scopeFilter($query, $request)
+    /*public function scopeFilter($query, $request)
     {
         if($request->has('cp')) {
             $query->where('codigo_pieza', 'like', '%'.$request->input('cp').'%');
@@ -55,5 +55,5 @@ class Pieza extends Model
         }
 
         return $query;
-    }
+    }*/
 }

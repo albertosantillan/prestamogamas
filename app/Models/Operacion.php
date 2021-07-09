@@ -39,5 +39,11 @@ class Operacion extends Model
     {
         return $this->hasOne(Pieza::Class,'id','id_pieza');
     }
-    
+    public function scopePieza($query, $request)
+    {
+        if($request->has('pieza')){
+            $query->where('id_pieza','like','%'.$request->input('pieza').'%');
+        }
+        return $query;
+    }
 }

@@ -17,9 +17,9 @@ class OperacionController extends Controller
         //
     }
 
-    public function all()
+    public function all(Request $request)
     {
-        $data = Operacion::all();
+        $data = Operacion::pieza($request);
 
         return response()->json($data);
     }

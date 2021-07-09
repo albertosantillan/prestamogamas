@@ -28,7 +28,7 @@ class PiezaController extends Controller
     }
 
     public function create(Request $request)
-    {
+    {	{
         // Validar todos los campos enviados en el formulario
         $this->validate($request, [
             'SKU' => 'required|min:5|max:100',

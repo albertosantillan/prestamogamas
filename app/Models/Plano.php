@@ -18,7 +18,8 @@ class Plano extends Model
         'ptosInsp',
         'comparacion',
         'cumple',
-        'fechaAlta'
+        'fechaAlta',
+        'user_id'
     ];
 
     /**

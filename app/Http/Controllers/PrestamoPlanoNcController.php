@@ -18,9 +18,11 @@ class PrestamoPlanoNcController extends Controller
     }
 
     //
-    public function all()
+    public function all(Request $request)
     {
-        $data = PrestamoPlanoNc::all();
+        $per_page = $request->input('per_page', 5);
+        
+        $data = PrestamoPlanoNc::devueltos($request)->paginate($per_page);
 
         return response()->json($data);
 

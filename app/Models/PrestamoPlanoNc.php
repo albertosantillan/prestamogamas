@@ -48,4 +48,12 @@ class PrestamoPlanoNC extends Model
     {
         return $this->hasOne(Pieza::Class,'id','id_pieza');
     }
+    public function scopeDevueltos($query, $request)
+    {
+        if($request->>has('isDevueltos')){
+            return $query->where('devuelto');
+        }
+        return $query;
+    }
+
 }

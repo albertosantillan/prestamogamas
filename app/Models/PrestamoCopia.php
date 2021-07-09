@@ -47,4 +47,11 @@ class PrestamoCopia extends Model
     {
         return $this->hasOne(Plano::Class,'id','id_plano');
     }
+    public function scopeDevueltos($query, $request)
+    {
+        if($request->has('isDevueltos')){
+            return $query->where('devuelto');
+        }
+        return $query;
+    }
 }

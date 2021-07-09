@@ -18,9 +18,11 @@ class PrestamoCopiaController extends Controller
     }
 
     //
-    public function all()
+    public function all(Request $request)
     {
-        $data = PrestamoCopia::all();
+        $per_page = $request->input('per_page',5);
+
+        $data = PrestamoCopia::devueltos($request)->paginate($per_page);
 
         return response()->json($data);
 

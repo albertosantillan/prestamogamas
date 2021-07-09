@@ -6,7 +6,8 @@
         {
             "label": "php server 8000",
             "type": "shell",
-            "command": "php -S 0.0.0.0:8000 -t public"
+            "command": "php -S 0.0.0.0:8000 -t public",
+            "problemMatcher": []
         }
     ]
 }

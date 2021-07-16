@@ -13,7 +13,7 @@ class CreateTablePrestamoCopia extends Migration
      */
     public function up()
     {
-        Schema::create('prestamos_copia', function (Blueprint $table) {
+        Schema::create('prestamo_copias', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id')->unsigned();
             $table->integer('id_area')->unsigned();
@@ -35,6 +35,6 @@ class CreateTablePrestamoCopia extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('prestamos_copia');
+        Schema::dropIfExists('prestamo_copias');
     }
 }

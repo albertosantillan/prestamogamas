@@ -20,7 +20,8 @@ class PrestamoCopia extends Model
         'ot',
         'fechaTentDev',
         'fechaDev',
-        'devuelto'
+        'devuelto',
+        'user_id'
     ];
 
     /**
